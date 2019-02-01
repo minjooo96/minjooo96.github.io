@@ -307,7 +307,7 @@ small{display: block; margin: 40px 0;}
   background: #fff; border: 1px solid #7c7c7c; overflow-y: scroll;
 }
 .family-site ul li{padding: 15px 0 0 15px; box-sizing: border-box;}
-.family-site ul li a{font-size: 16px; color: 141414px; font-weight: 400;}
+.family-site ul li a{font-size: 16px; color: 141414; font-weight: 400;}
 
 /* ==================== div.mv-pop ==================== */
 
