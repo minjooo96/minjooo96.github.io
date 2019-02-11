@@ -138,7 +138,7 @@ section.main .main-slide{top: 0; margin: auto;}
   position:  relative; bottom: 50px; z-index: 9;
   width: 160px; height: 15px; margin: auto;
 }
-.main-slide .wrapper button{background: none; border: none;}
+.main-slide .wrapper button{border: none;}
 .main-slide .swiper-container-horizontal > .wrapper > .swiper-pagination-bullets .swiper-pagination-bullet{margin: 0 6px 4px 0;}
 .main-slide .swiper-pagination-bullet{
   width: 15px; height: 15px;
@@ -307,7 +307,7 @@ small{display: block; margin: 40px 0;}
   background: #fff; border: 1px solid #7c7c7c; overflow-y: scroll;
 }
 .family-site ul li{padding: 15px 0 0 15px; box-sizing: border-box;}
-.family-site ul li a{font-size: 16px; color: #141414; font-weight: 400;}
+.family-site ul li a{font-size: 16px; color: 141414px; font-weight: 400;}
 
 /* ==================== div.mv-pop ==================== */
 

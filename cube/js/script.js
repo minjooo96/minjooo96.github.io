@@ -225,7 +225,9 @@ $(function(){
     $('.main-release .swiper-slide-active').height(releaseActiveWidth);
     $('.main-release .swiper-container').height(releaseActiveWidth);
     release_swiper.update();
-  }).resize();
+  })
+  $(window).trigger('resize');
+
   $('.main-release a').click(function(e){
     e.preventDefault();
   });
