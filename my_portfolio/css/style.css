@@ -1,0 +1,223 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=korean,latin-ext');
+
+/*
+  메인컬러
+  #ffffff
+  #45ada8
+  #333333
+*/
+
+
+/* ============================ 공통 ============================ */
+body{font-family: 'Raleway','Nanum Gothic', sans-serif;}
+header, section, article, aside, footer{position: relative; width: 100%;}
+article,footer{overflow: hidden;}
+.wrapper{margin: auto; padding-top: 150px; box-sizing: border-box;}
+.title{width: 50%; position: absolute; font-size: 45px;}
+.title-text{position: relative; z-index: 701;}
+.title-line{
+  width: 100%; height: 15px; display: inline-block; background: #45ada8;
+  position: absolute; bottom: 0; z-index: 700; transition: 1s;
+}
+.title-left{left: 0; text-align: right;}
+.title-right{right: 0; text-align: left;}
+.title-left .title-line{left: -100%;}
+.title-right .title-line{right: -100%;}
+.title-left .title-line.line-move{left: 0%; transition: 1s;}
+.title-right .title-line.line-move{right: 0%; transition: 1s;}
+::selection{color: #fff; background: #45ada8}
+.background{
+  width: 100%; height: 100%; opacity: 0.45;
+  position: absolute; top: 0; left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ============================ 본문 ============================ */
+/* header */
+header{height: 60px; position: absolute; z-index: 1;}
+header .wrapper{padding: 0;}
+nav{
+  display: inline-block; height: 100%;
+  position: relative; left: 50%; transform: translateX(-50%);
+}
+nav li{position: relative; padding: 0 30px; box-sizing: border-box; float: left; line-height: 60px;}
+nav li a{color: #fff; font-size: 25px; font-weight: 400;}
+nav li a::after{
+  content: "";
+  width: 0; height: 1px; background: #fff;
+  position: absolute; left: 0; bottom: 5px;
+  transition: 0.5s;
+}
+nav li:hover a::after{width: 100%;}
+/* section */
+/* article - main */
+.main{width: 100%; height: 950px; background-color: #000;}
+.main-text{
+  width: 100%; position: relative; top: 50%; transform: translateY(-50%); z-index: 10;
+  text-align: center; color: #fff; padding: 0;
+}
+.main-text h2{position: relative; width: 100%; font-size: 4.5em;}
+.main-text p{
+  position: relative;
+  width: 100%; font-size: 2em; font-weight: 400;
+}
+.main .background{
+  background-image: url(../img/main_slide/9.jpg);
+  background-position: bottom;
+}
+
+/* article - about */
+.about{height: auto; padding: 100px 0px; box-sizing: border-box;}
+.about .wrapper{width: 1024px; height: 100%;}
+.about-left{width: 40%; height: 70%; float: left;}
+.about-left span{
+  display: inline-block;
+  width: 300px; height: 300px;
+  position: relative; left: 50%; transform: translateX(-50%);
+  background-image: url(../img/my_photo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.about-right{width: 60%; height: 70%; float: right;}
+.about-right tr{width: 100%; height: 30px; font-size: 15px; vertical-align: top;}
+.about-right tr th{color: #45ada8; text-align: left; line-height: 25px;}
+.about-right tr td{line-height: 25px; padding-bottom: 10px;}
+.about-comment{
+  width: 100%; height: 20%; clear: both;
+  padding-top: 5%; box-sizing: border-box; margin-bottom: 100px;
+  line-height: 25px; /* text-align: center; */
+}
+.about-comment h3{color: #45ada8;}
+.about-comment b{text-decoration: underline; color: #45ada8;}
+
+/* article - skill */
+.skill{clear: both; padding-top: 60px;}
+.skill li{
+  width: 20%; height: auto; float: left; margin-right: 6.66%;
+  text-align: center; vertical-align: top;
+}
+.skill li:last-child{margin-right: 0;}
+.skill-title{
+  width: 100%; background-color: #45ada8; border-radius: 100%;
+  color: #fff; font-weight: 600; font-size: 22px; margin-bottom: 15px;
+}
+.skill-title span{
+  display: block; position: relative; top: 50%;
+  transform: translateY(-50%);
+}
+.skill-text{color: #333;}
+.skill-text span{display: block; margin-bottom: 5px;}
+
+/* aside */
+aside{width: auto; height: auto; position: fixed; top: 70%; right: 1%; z-index: 800;}
+aside ul li{position: relative; width: 100%; height: 40px; line-height: 40px; text-align: right;}
+aside ul li a{font-size: 16px; font-weight: 700; transition: 0.5s;}
+/* 백그라운드가 있는 영역에 갔을 경우 */
+aside.aside-white ul li a{color: #fff;}
+aside.aside-white ul li a span{border: 2px solid #fff;}
+/* -- 백그라운드가 있는 영역에 갔을 경우 */
+aside ul li a::after{
+  content: "";
+  width: 0; height: 1px; background: #45ada8;
+  position: absolute; bottom: 0; left: 0;
+  transition: 0.5s;
+}
+aside ul li a span{
+  display: inline-block; width: 20px; height: 20px;
+  vertical-align: middle; margin-left: 10px;
+  border: 2px solid #000; border-radius: 100%; box-sizing: border-box;
+  transition: 0.5s;
+}
+/* hover class */
+aside ul li a.aside-hover{color: #45ada8;}
+aside ul li a.aside-hover::after{width: 100%;}
+aside ul li a.aside-hover span{border: 2px solid #45ada8; background: #45ada8;}
+
+/* footer */
+.contact{height: 500px; background-color: #000; padding: 100px 0px; box-sizing: border-box;}
+.contact .title{color: #fff;}
+.contact .wrapper{
+  position: relative; z-index: 61;
+  display: inline-block; left: 50%; transform: translateX(-50%);
+}
+.contact table tr{width: 100%; height: 30px; color: #fff;}
+.contact table tr th{width: 30%; text-align: left;}
+.contact table tr td{width: 70%;}
+.contact table tr td a{color: #fff;}
+.contact table tr td a:hover{color: #45ada8; text-decoration: underline;}
+.contact .background{background-image: url(../img/main_slide/5.jpg); z-index: 60;}
+
+
+/* ============================ media ============================ */
+/* 태블릿 */
+@media (max-width: 1024px) {
+  /* 공통 */
+  .title{font-size: 35px;}
+
+  /* header */
+  header{
+    position: fixed; bottom: 0; z-index: 995;
+    background-color: rgba(255,255,255,0.8); transition: 0.5s;
+  }
+  nav li{padding: 0 25px;}
+  nav li a{font-size: 20px; color: #333;}
+  header.header-scroll{background-color: rgba(0,0,0,0.8);}
+  header.header-scroll nav li a{color: #fff;}
+
+  /* article - main */
+  .main{height: 100vh;}
+  .main-text h2{font-size: 4em; margin-bottom: 10px;}
+  .main-text p{font-size: 1.5em;}
+  .main .background{background-attachment: inherit;}
+
+  /* article - about */
+  .about .wrapper{width: auto; padding-top: 100px;}
+  .about-left{margin: 0 auto 30px; width: auto; height: auto;}
+  .about-right{float: none; margin: auto;}
+  .about-comment{padding: 5%;}
+
+  /* article - about - skill */
+  .skill{padding: 0 5%;}
+  .skill-title{font-size: 18px;}
+  .skill-text{font-size: 15px;}
+
+  /* aside */
+  aside{display: none;}
+
+  /* footer */
+  .contact .wrapper{width: auto; padding-top: 100px;}
+  .contact .background{background-attachment: inherit; background-position: center;}
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  /* header */
+  header{height: 50px;}
+  nav li{line-height: 50px; padding: 0 10px;}
+  nav li a{font-size: 16px; color: #333;}
+
+  /* article - main */
+  .main-text h2{font-size: 3em;}
+  .main-text p{font-size: 1em;}
+
+  /* article - about */
+  .about{padding: 100px 0px 0px 0px;}
+  .about .wrapper > *{padding: 20px 15px; margin: auto;}
+  .about-left{height: 25%; position: relative; left: 50%; transform: translateX(-50%);}
+  .about-right{width: 100%; height: auto;}
+  .about-right tr{height: 25px; font-size: 13px;}
+  .about-right tr td{padding: 0;}
+  .about-comment{height: auto; font-size: 13px;}
+
+  /* article - about - skill */
+  .skill-title{font-size: 11px; font-weight: bold;}
+  .skill-text{font-size: 12px;}
+  .skill li{margin-right: 4%; width: 22%;}
+
+  /* footer */
+  .contact .wrapper{padding: 150px 20px 50px;}
+}
