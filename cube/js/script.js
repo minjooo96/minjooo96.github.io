@@ -1,16 +1,67 @@
-// 앨범 - 이미지
-var album_img = [
-  'img/album/btob_huta_hutazone.jpg',
-  'img/album/btob_lcs_mark.jpg',
-  'img/album/clc_elkie_idream.jpg',
-  'img/album/btob_hourmoment.jpg',
-  'img/album/train_season.jpg',
-  'img/album/ptg_thumbsup.jpg',
-  'img/album/idle_hann.jpg',
-  'img/album/btob_rain.jpg',
-  'img/album/tripleh_retro.jpg',
-  'img/album/ptg_positive.jpg'
+// 앨범 - 이미지 및 텍스트
+var album_list = [
+  {
+    'thumb' : 'img/album/btob_huta_hutazone.jpg',
+    'title' : 'YA',
+    'singer' : '이민혁(HUTA)',
+    'date' : '2019.01.15',
+  },
+  {
+   'thumb' : 'img/album/btob_lcs_mark.jpg',
+   'title' : 'Gone',
+   'singer' : '이창섭',
+   'date' : '2018.12.11',
+ },
+ {
+   'thumb' : 'img/album/clc_elkie_idream.jpg',
+   'title' : 'I Dream',
+   'singer' : 'ELKIE',
+   'date' : '2018.11.24',
+ },
+ {
+   'thumb' : 'img/album/btob_hourmoment.jpg',
+   'title' : '아름답고도 아프구나',
+   'singer' : 'BTOB',
+   'date' : '2018.11.12',
+ },
+ {
+   'thumb' : 'img/album/train_season.jpg',
+   'title' : '네가 있던 계절',
+   'singer' : '가을로 가는 기차',
+   'date' : '2018.11.05',
+ },
+ {
+   'thumb' : 'img/album/ptg_thumbsup.jpg',
+   'title' : '청개구리',
+   'singer' : '펜타곤',
+   'date' : '2018.09.10',
+ },
+ {
+   'thumb' : 'img/album/idle_hann.jpg',
+   'title' : '한(一)',
+   'singer' : '(여자)아이들',
+   'date' : '2018.08.14',
+ },
+ {
+   'thumb' : 'img/album/btob_rain.jpg',
+   'title' : '비가 내리면(When it rains)',
+   'singer' : 'BTOB-BLUE',
+   'date' : '2018.08.02',
+ },
+ {
+   'thumb' : 'img/album/tripleh_retro.jpg',
+   'title' : 'RETRO FUTURE',
+   'singer' : 'Triple H',
+   'date' : '2018.07.18',
+ },
+ {
+   'thumb' : 'img/album/ptg_positive.jpg',
+   'title' : 'Positive',
+   'singer' : '펜타곤',
+   'date' : '2018.04.01',
+ }
 ]
+
 // MV - 이미지 및 텍스트
 var mv_list = [
   {
@@ -88,6 +139,7 @@ $(function(){
   $('#gnb-btn').click(function(){
     $('header').toggleClass('mo-open');
   });
+
   $(window).resize(function(){
     //이벤트 초기화
     $('.gnb > li > a').off('click');
@@ -168,22 +220,52 @@ $(function(){
 
 // =================== release js
 $(function(){
-  // 이미지 삽입
-  for (var i = 1; i < 11; i++) {
+  // 텍스트 삽입
+  for (var i = 1; i < album_list.length; i++){
+    $('.main-release .swiper-wrapper').append(
+      '<li class="swiper-slide">'+
+      '  <a href="#">'+
+      '    <div class="main-release-front"></div>'+
+      '    <div class="main-release-back-wrap">'+
+      '      <div class="main-release-back"></div>'+
+      '      <div class="main-release-text">'+
+      '        <span>'+ album_list[i-1]['title'] +'</span>'+
+      '        <span>'+ album_list[i-1]['singer'] +'</span>'+
+      '        <span>'+ album_list[i-1]['date'] +'</span>'+
+      '      </div>'+
+      '    </div>'+
+      '  </a>'+
+      '</li>'
+    );
+  }
+
+  for (var i = 1; i < album_list.length; i++){
+    // front 이미지 삽입
     $('.main-release .swiper-wrapper .swiper-slide:nth-child('+i+')').find('.main-release-front').css({
-    background: 'url('+album_img[i-1]+')',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+      background: 'url('+album_list[i-1]['thumb']+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    });
+
+    // back 이미지 삽입
+    $('.main-release .swiper-wrapper .swiper-slide:nth-child('+i+')').find('.main-release-back').css({
+      background: 'url('+album_list[i-1]['thumb']+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundColor: '#000',
+      opacity: 0.5,
     });
   }
 
   var filp = $('.main-release .swiper-slide a').flip({
     axis: 'y',
     front: '.main-release-front',
-    back: '.main-release-back',
+    back: '.main-release-back-wrap',
   });
 
-  $('.main-release .swiper-slide').on('click', 'a', function(){
+  //동적으로 만들어진 요소들도 클릭 가능하게
+  $('.main-release .swiper-slide').on('click', 'a', function(e){
+    e.preventDefault();
     $(this).flip('trigger');
   });
 
@@ -215,7 +297,7 @@ $(function(){
     axis: 'y',
     trigger: 'click',
     front: '.main-release-front',
-    back: '.main-release-back',
+    back: '.main-release-back-wrap',
   });
 
   $(window).resize(function(){
@@ -261,8 +343,8 @@ $(function(){
   });
   // MV 팝업
   $('.mv-pop').hide();
-  $('.mv-pop button').click(function(){
-    $('.mv-pop').fadeOut();
+  $('.mv-pop').click(function(){
+    $(this).fadeOut();
   });
 });
 
