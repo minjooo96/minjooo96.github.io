@@ -73,7 +73,7 @@ $(function(){
   },1000);
   $('.main-text p').delay(500).animate({
     opacity: 1,
-    top: 0,
+    top: '10px',
   },1000);
 
   // ==================== article - skill
@@ -82,25 +82,14 @@ $(function(){
     $('.skill-title').height(skillTitW);
   }).resize();
 
-  // ==================== article - main
-
-  // var swiper = new Swiper('.swiper-container', {
-  //       slidesPerView: 3,
-  //       spaceBetween: 30,
-  //       pagination: {
-  //         el: '.swiper-pagination',
-  //         clickable: true,
-  //       },
-  // });
-
-
   // ==================== article - portfolio
   $('.portfolio .pf-list:nth-child(odd)').addClass('pf-list-left');
   $('.portfolio .pf-list:nth-child(even)').addClass('pf-list-right');
   $('.pf-work-img').on({
     mouseover: function(){
-      var overPfWorkW = $(this).prev('.pf-frame').width();
-      var overPfWorkH = $(this).prev('.pf-frame').outerHeight();
+      // alert('올렸습니다.');
+      var overPfWorkW = $(this).next('.pf-frame').width();
+      var overPfWorkH = $(this).next('.pf-frame').outerHeight();
       var imgH = $(this).height();
       var goBottom = imgH-overPfWorkH;
 
@@ -122,9 +111,11 @@ $(function(){
   });
 
   // 버튼 클릭시 팝업 ON/OFF
-  $('.pf-pop-btn').on('click',function(e){
+  $('.cube .pf-pop-btn').on('click',function(e){
     e.preventDefault();
+    $('.pf-pop-plan').hide();
     $('.pf-pop').fadeIn(1000);
+    $('.cube-plan').show();
   });
   $('.pf-pop .close').on('click',function(e){
     e.preventDefault();
@@ -162,30 +153,4 @@ $(function(){
       $('aside .menu-contact').find('a').addClass('aside-hover');
     }
   }).scroll();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // ==================== article - main
-
 });

@@ -65,8 +65,10 @@
 /* 정보부분 */
 .pf-info{padding: 0 30px; box-sizing: border-box;}
 .pf-info table{width: 100%; height: 40%;}
+.pf-info table b{color: #45ada8; font-weight: normal;}
 .pf-info table tr{width: 100%; height: 20%; text-align: left;}
-.pf-info table tr th.pf-info-tit{font-size: 20px; font-weight: 800;}
+.pf-info table tr th.pf-info-tit{color: #333; font-size: 20px; font-weight: 700;}
+.pf-info table tr th.pf-info-tit b{color: #45ada8; font-weight: 700;}
 .pf-info table tr th{width: 15%; color: #45ada8;}
 .pf-info table tr td{width: 75%;}
 .pf-info p{
@@ -91,8 +93,8 @@
   position: fixed; top: 0; left: 0; z-index: 999;
 }
 .pf-pop-contents{
-  width: 80%; height: 85vh; padding: 50px; box-sizing: border-box;
-  background-color: #fff;
+  width: 80%; height: 85vh; background-color: #fff;
+  padding: 60px 150px; box-sizing: border-box;
   position: relative; top: 50%; left: 50%;
   transform: translate(-50%, -50%); z-index: 998;
 }
@@ -110,6 +112,7 @@
 .pf-pop-contents .close span:nth-child(2){transform: rotate(-45deg);}
 .pf-pop .background{background-color: #000; opacity: 0.8;}
 .pf-pop-plan{width: 100%; height: 100%; overflow-y: scroll;}
+.pf-pop-plan img{width: 100%;}
 
 /* .pf-img */
 .pf-img{position: relative; height: 80%;}
@@ -129,6 +132,11 @@
 .pf-2-tamo .pf-mo{width: 35%; right: 30px; bottom: -55px;}
 .pf-1-tablet .pf-tablet{width: 70%; right: 50%; top: 0; transform: translateX(50%);}
 .pf-1-mo .pf-mo{width: 45%; right: 50%; transform: translateX(50%);}
+
+/* 큐브엔터테인먼트 */
+.cube .pf-color li:nth-child(1){background-color: #f1f1f1;}
+.cube .pf-color li:nth-child(2){background-color: #141414; color: #fff;}
+.cube .pf-color li:nth-child(3){background-color: #03519f; color: #fff;}
 
 /* ------ 태블릿 ------ */
 @media (max-width: 1024px) {
@@ -164,7 +172,7 @@
   .pf-color{position: relative; height: auto; margin-top: 15px;}
   .pf-color li{font-size: 12px;}
   /* 정보부분 */
-  .pf-info table{width: auto; height: 150px; font-size: 13px;}
+  .pf-info table{height: 150px; font-size: 13px;}
   .pf-info table tr{height: 10%;}
   .pf-info table tr th{width: 25%;}
   .pf-info table tr th.pf-info-tit{font-size: 16px; font-weight: 700;}
