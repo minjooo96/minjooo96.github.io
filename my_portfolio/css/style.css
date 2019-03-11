@@ -65,7 +65,7 @@ nav li:hover a::after{width: 100%;}
   width: 100%; font-size: 2em; font-weight: 400;
 }
 .main .background{
-  background-image: url(../img/main_slide/9.JPG);
+  background-image: url(../img/main_slide/main_img.jpg);
   background-position: bottom;
 }
 
@@ -149,7 +149,7 @@ aside ul li a.aside-hover span{border: 2px solid #45ada8; background: #45ada8;}
 .contact table tr td{width: 70%;}
 .contact table tr td a{color: #fff;}
 .contact table tr td a:hover{color: #45ada8; text-decoration: underline;}
-.contact .background{background-image: url(../img/main_slide/5.JPG); z-index: 60;}
+.contact .background{background-image: url(../img/main_slide/footer_img.jpg); z-index: 60;}
 
 
 /* ============================ media ============================ */
