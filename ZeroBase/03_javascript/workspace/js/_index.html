@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{line-height:1.6em;font-size:14px;font-family:sans-serif;}
+        hr{border-color:blue;border-width:2px;background-color:blue;}
+        h2{color:blue;font-size:25px;font-weight:bold;}
+        h2::before{content:'[';display:inline-block;margin-right:10px;}
+        h2::after{content:']';display:inline-block;margin-left:10px;}
+        h3{border-bottom:1px solid cornflowerblue;color:cornflowerblue;font-size:22px;font-weight:bold;}
+        h4{margin:0;color:cadetblue;font-size:18px;}
+        h5{margin:10px 0;color:mediumslateblue;font-size:16px;}
+        table{border:1px solid #000;}
+        table th{background-color:gray;color:#fff;}
+        table tr *{padding:5px;border:1px solid #000;text-align:center;}
+    </style>
+</head>
+<body>
+<h2>자바스크립트 소개</h2>
+<pre>
+* Node.js
+- v8(자바스크립트 엔진)으로 빌드 된 이벤트 기간 자바스크립트 런타임 플랫폼
+- 확장성 있는 네트워크 애플리케이션(특히 서버사이드) 개발에 사용되는 소프트웨어 플랫폼
+- 자바스크립트를 활용하며 Non-blocking I/O와 단일 스레드 이벤트 루프를 통한 높은 성능으로 처리 가능
+-- 코드를 작성하고, 코드가 돌아가는 엔진이 필요한데, Node.js가 그 역할을 한다.
+
+* code-runner (오프라인 개발 환경)
+- 단축키
+실행 : ctrl + r + t
+클리어 : ctrl + c + t
+
+* leetcode (온라인 개발 환경)
+https://leetcode.com/playground/new/empty
+github 계정으로!
+- 온라인 기반으로 알고리즘 문제 풀이 및 토론 환경을 제공하는 플랫폼 사이트
+- 자바스크립트 등의 코딩 언어 지원
+- 프로그래머스는 국내에서 많이 사용, leetcode는 해외에서 많이 사용된다.
+- 페이스북, 애플 등의 기업에서 사용..
+
+* 자바스크립트란
+- 객체 기반의 스크립트 프로그래밍 언어
+- ECMAScript 사양을 준수하는 범용 스크립팅 언어 (ECMA에서 표준을 정함)
+- 자바와 직접적인 연관 X, 웹의 동적 동작을 구현하기 위해 제작
+- Mocha > LiveScript > Javascript 로 명칭 변경
+- 자바스크립트는 JS 엔진 위에서 수행되며, 구글 V8, 파이어폭스, 스파이더몽키, 엣지, Chakra 존재
+
+* ECMAScript
+- Ecma International이 ECMA-262 기술 규격에 따라 정의하고 있는 표준화된 스크립트 프로그래밍 언어
+- 자바스크립트를 표준화하기 위해 만들어졌으며, 액션 스크립트와 J스크립트 등 다른 구현체도 포함
+- Ecma International : 정보 통신에 대한 표준을 제정하는 비영리 표준화 기구
+- ECMA-262 : Ecma International에서 제정한 기술 규격의 이름으로, 범용 목적의 스크립트 언어 명세 기술
+- 97년 ES1 초판, 09년 ES5, 15년 ES2015(ES6) 으로 매해 6월에 버전 갱신 중
+</pre>
+<br><hr>
+<h2>자바스크립트 맛보기</h2>
+<h3>입출력</h3>
+<pre>
+- 사용자가 프로그램과 상호작용하기 위한 방법, 입/출력을 아우르는 개념
+- Input/Output을 줄여 I/O로 표기하기도 함
+- 운영 체제에서의 대표적인 입출력은 "표준 입력(Standard In), 표준 출력(Standard Out), 표준 오류 출력(Standard Error)"
+
+* 표준 입력 stdin
+- 일반적으로 키보드의 응답을 받아 입력
+- 프로그램의 데이터를 추가하기 위한 입력장치
+- 알고리즘에서는 문제의 TestCase 입력을 위해 사용
+
+* 표준 출력 stdout
+- 일반적으로 모니터에 문자열로 출력
+- 프로그램의 실행 상태, 실행 결과를 보고 판단
+- 알고리즘에서는 문제의 정답 확인, 디버깅 용으로 사용 
+</pre>
+<h3>자바스크립트 코드</h3>
+<pre>
+* 코드 구성
+- 문법의 대부분을 C, C++, java로부터 차용하여 제작된 스크립트 기반의 언어
+- 다수의 표현식으로 하나의 명령문(하나하나의 단어)이 만들어지며, 명령문으로 프로그램이 수행
+- 하나의 명령문 끝은 개행문 혹은 세미콜론으로 표시
+</pre>
+
+<br><hr>
+
+<h2>자바스크립트 문법</h2>
+<h3>키워드(= 예약어)</h3>
+<pre>
+- 자바스크립트에서 문법을 만들 때 미리 정해진 용도로 동작하기 위해 정의해 놓은 단어
+- 자바스크립트에 예약된 키워드 목록은 이미지로 저장!
+  (char, double, null, boolean, catch 등....... )
+</pre>
+
+<h3>식별자(= 변수)</h3>
+<pre>
+- 스크립트에서 변수나 함수에 이름을 붙일 때 사용하는 단어
+- 대소문자를 구별, 유니코드 문자셋을 이용
+- 자바스크립트 내 식별자 규칙
+  · 예약어 사용 불가
+  · 숫자로 시작 불가
+  · 특수문자는 _ 와 $ 만 가능
+  · 공백 문자 포함 불가
+</pre>
+
+<h3>변수</h3>
+<pre>
+- <strong style="color:red;">변경 가능</strong>한 값을 저장하기 위한 기억공간
+- 사용하기 전 반드시 선언 필요
+- 중복 선언 불가능
+- 키워드 : let
+- 한줄에 여러개의 변수 선언이 가능하다.
+  예 : let name = 'a', age = '15';
+</pre>
+
+<h3>상수</h3>
+<pre>
+- <strong style="color:red;">변경 불가능</strong>한 값을 저장하기 위한 기억공간
+- 사용하기 전 반드시 선언 필요
+- 중복 선언 불가능
+- 키워드 : const
+- value 값 없이 선언하면 다음에 변수에 값을 넣을 수 없음
+  예 : const C; C = 123; << 이것이 불가능! 처음부터 const C = 123; 으로 선언해줘야한다.
+- 고유한 값으로 설정하기 위해 사용, ReadOnly 값으로 사용한다.
+- 상수는 보통 <strong style="text-decoration:underline;">대문자로 표기</strong> 한다.
+
+</pre>
+
+<h3>호이스팅(Hoisting)</h3>
+<pre>
+- ES6(ECMA2015)부터 나타남
+- 코드에 선언된 변수 및 함수를 유효한 범위의 코드 상단으로 끌어 올리는 작업
+- var 의 변수/함수의 선언만 위로 올려지고, 할당은 올려지지 않음
+- let/const 변수 선언과 함수 표현식에서는 호이스팅 발생하지 않음
+</pre>
+
+<h3>자료형</h3>
+<pre>
+- 목적에 따라 특별한 성질이나 정해진 범주를 갖고 있는 데이터의 종류
+- 자바스크립트에서는 6가지의 원시 타입 자료형과 1가지의 객체 타입 자료형으로 구성
+</pre>
+<table>
+    <thead>
+        <tr>
+            <th>구분</th>
+            <th>데이터 타입</th>
+            <th>설명</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th rowspan="6">원시 타입 <br>Primitive Type</th>
+            <td>Boolean</td>
+            <td>논리적 값으로 true, false</td>
+        </tr>
+        <tr>
+            <td>null</td>
+            <td>존재하지 않거나 유효하지 않은 주소 표시</td>
+        </tr>
+        <tr>
+            <td>undefined</td>
+            <td>선언 후 값을 할당하지 않은 변수</td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>정수, 실수 등의 숫자, 정수의 한계는 플러스마이너스 2의 53승</td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>빈 문자열이나 글자들을 표현하는 문자열</td>
+        </tr>
+        <tr>
+            <td>symbol</td>
+            <td>문자열과 함께 객체 property로 사용, ES6에 추가</td>
+        </tr>
+        <tr>
+            <th>객체 타입 <br>Object Type</th>
+            <td>object</td>
+            <td>2개 이상의 복잡한 개체 저장 가능</td>
+        </tr>
+    </tbody>
+</table>
+<h4>원시타입</h4>
+<h5>1. typeof</h5>
+<pre>
+- 인수의 자료형을 반환하는 연산자
+- 연산자인 typeof x / 함수인 typeof(x) 로 사용 가능
+</pre>
+<h5>2. boolean</h5>
+<pre>
+- boolean은 논리적인 값을 표현하는 자료형
+- true > 참, false > 거짓, 2가지 값만 존재
+- 주로 조건문 등에서 동작 판단의 기준으로 사용
+</pre>
+<h5>3. null</h5>
+<pre>
+- null은 값이 비어 있다는 의미로 표현되는 자료형
+- 존재하지 않는 nothing, 비어있는 empty, 알 수 없는 unknown 값을 나타내는데 사용
+</pre>
+<h5>4. undefined</h5>
+<pre>
+- undefined는 값이 할당되어 있는 지안은 상태를 나타낼 때 사용되는 자료형
+- 변수 선언 후 초기화 하지 않는다면, undefined가 자동으로 할당
+</pre>
+<h5>5. number</h5>
+<pre>
+- number는 정수, 부동소수점 floating point 숫자를 표현하는 자료형
+- number와 관련된 연산은 사칙연산이 대표적
+- number에는 일반적인 숫자 외에 Infinity, -Infinity, NaN(Not a Number) 같은 특수 숫자 값이 포함
+- number에서는 2의 53승 -1 보다 큰 값을 사용할 수 없으며, 더 큰 정수를 다루고싶다면 bigint 자료형을 사용해야한다.
+</pre>
+<h5>6. string</h5>
+<pre>
+- string은 문자, 문자열을 표현하는 자료형
+- 자바스크립트에서 문자열은 3가지의 따옴표로 표현 가능
+  · 큰 따옴표 "", 작은 따옴표 '', 역 따옴표(백틱) ``
+</pre>
+<h4>객체타입</h4>
+<h5>1. object ★★★★★</h5>
+<pre>
+- object는 다수의 원시 자료형을 포함하거나 복잡한 개체(entity)를 표현할 수 있는 자료형
+- object는 Object() 혹은 중괄호{} 를 통해 생성
+- object의 개체(entity)는 key:value 형태로 표현하며, 접근은 object.key 형태로 표현
+- 추가시 object.key = value; 로 바로 입력
+- 삭제시 delete object.key;
+- 객체 복사는 변수 = object 이름;
+
+** 객체 복사의 문제점
+- object의 값을 복사할 때는 대상 전체가 아닌 <strong style="color:red;">object 내 주소 값만 복사</strong>되는 문제!
+- 가리키는 대상 전체를 복사하는 방법은 <strong>얕은 복사 Shallow copy, 깊은 복사 Deep copy</strong>를 통해 가능
+</pre>
+<h5>2. object 얕은 복사</h5>
+<pre>
+<h5>(1) for문을 이용</h5>
+<code>
+    let user = {
+        name: '민주',
+        age: 27,
+    };
+    let copyuser = {};
+
+    <strong>
+    for( let key in user ){
+        copyuser[key] = user[key];
+    }
+    </strong>
+
+    user.name = 'ae민주';
+    console.log(user.name); // ae민주
+    console.log(copyuser.name); // 민주
+</code>
+
+<h5>(2) Object.assign</h5>
+<code>
+    let user = {
+        name: '민주',
+        age: 27,
+    };
+    <strong>
+    let copyuser = Object.assign({},user);
+    </strong>
+    console.log(copyuser);
+
+    user.name = 'ae민주';
+    console.log(user.name); // ae민주
+    console.log(copyuser.name); // 민주
+</code>
+
+<h5>(3) es6부터 지원하는 전개 연산자(Spread Operator)</h5>
+<code>
+    let user = {
+        name: '민주',
+        age: 27,
+    };
+    <strong>
+    let copyuser = { ...user };
+    </strong>
+    console.log(copyuser);
+</code>
+
+<h5>(4) 얕은 복사의 문제점</h5>
+- 객체 내 또 다른 객체가 있다면 복사되지 않음
+- 첫번째 레벨의 객체를 복사 했을 때, 첫번째 레벨의 객체 안의 객체는 
+  복사 당한 객체의 주소값을 바라보고 있기 때문에 똑같은 문제점이 발생된다.
+</pre>
+<h5>2. object 깊은 복사</h5>
+<pre>
+<h5>(1) 재귀 함수를 이용한 깊은 복사</h5>
+- for문과 if문 이용해서 주소값을 다르게 만드는 것
+
+<h5>(2) JSON 객체를 이용한 깊은 복사</h5>
+- stringfy는 객체를 문자열로 변환하는데 이 때 원본 객체와의 참조가 끊긴다.
+<code>
+    let user = {
+        name: '민주',
+        age: 27,
+        sizes: {
+            height: 168,
+            weight: 20,
+        }
+    };
+    let copyuser = JSON.parse(JSON.stringify(user));
+
+    copyuser.sizes.height = copyuser.sizes.height + 2; // 170
+
+    console.log(user.sizes.height); // 168
+    console.log(copyuser.sizes.height); // 170
+</code>
+</pre>
+
+<h3>형 변환</h3>
+<pre>
+- js는 느슨한 타입 언어 또는 동적 타입 언어로 <strong>변수의 자료형을 명시적으로 선언할 필요가 없는 언어</strong>
+- 연산자로 이한 계산이나 변수에 전달되는 값은 자동으로 암묵적 형 변환 수행
+- <strong>강제적 형 변환</strong>을 위해서는 자료형 함수를 이용해 명시적 형 변환 수행
+- boolean은 0이 아닌 값은 모두 true
+
+<h4>1. Number</h4>
+- Number는 정수와 실수를 모두 포함하는 자료형 변환, 정수 혹은 실수의 명시적 변환은 parse 함수 사용
+- 정수 변환 : parseInt(피연산자)
+- 실수 변환 : parseFloat(피연산자)
+console.log( Number('') ); // 0
+console.log( Number('123') ); // 123
+console.log( Number('hello') ); // NaN
+console.log( Number('123aa') ); // NaN
+console.log( Number(123 + 'aa') ); // NaN
+console.log( Number(true) ); // 1
+console.log( Number(false) ); // 0
+console.log( Number(undefined) ); // NaN
+console.log( Number(null) ); // 0
+console.log( parseInt(123.123) ); // 123
+console.log( parseInt('123.123') ); // 123
+console.log( parseFloat(123.123) ); // 123.123
+console.log( parseFloat('123.123') ); // 123.123
+console.log( typeof parseInt(123.123) ); // number
+console.log( typeof parseInt('123.123') ); // number
+console.log( typeof parseFloat(123.123) ); // number
+console.log( typeof parseFloat('123.123') ); // number
+
+<h4>2. Boolean</h4>
+console.log( '1' + Boolean() ); // false
+console.log( '2' + Boolean('') ); // false
+console.log( '3' + Boolean('0') ); // true >> 문자열로 인식하기때문에!
+console.log( '4' + Boolean('123') ); // true
+console.log( '5' + Boolean('hello') ); // true
+console.log( '6' + Boolean(0) ); // false
+console.log( '7' + Boolean(123) ); // true
+console.log( '8' + Boolean(NaN) ); // false
+console.log( '9' + Boolean(true) ); // true
+console.log( '10' + Boolean(false) ); // false
+console.log( '11' + Boolean(undefined) ); // false
+console.log( '12' + Boolean(null) ); // false
+console.log( '13' + Boolean(Number('0')) ); // false
+</pre>
+
+<h3>연산자</h3>
+<pre>
+- 연산자는 프로그램에서 데이터를 처리하여 결과를 산출할 목적으로 사용되는 문자
+- 연산의 대상 값은 피연산자라고 하며, 피 연산자의 개수에 따라 단항/이항/삼항 연산자의 종류 존재
+</pre>
+<h5>단항 연산자</h5>
+<pre>
+- 부호 연산자 + - 
+- 증감 연산자 ++ --
+- 논리 연산자 !
+- 비트 연산자 ~
+</pre>
+<h5>이항 연산자</h5>
+<pre>
+- 산술 연산자 + - % / *
+- 대입 연산자 = += -=
+- 비교 연산자 == !=
+- 논리 연산자 && ||
+</pre>
+<h5>삼항 연산자</h5>
+<pre>
+- 조건문 : (조건식) ? 참일 때 : 거짓일 때
+</pre>
+<h5>연산자 우선순위</h5>
+<pre>
+- 21개의 우선순위가 있고, 우선순위가 높을수록 먼저 수행된다.
+</pre>
+
+<h4>(1) 산술 대입 연산자</h4>
+<pre>
+- 수학적 계산을 위해 제공하는 연산자
+- 거듭제곱 연산자는 ** 로 사용
+- 몫 연산자는 따로 없고, 나누기를 한 뒤 parseInt를 사용해 정수 부분만 남긴다.
+- 나머지 연산자는 %
+</pre>
+<h4>(2) 대입 연산자</h4>
+<pre>
+- 계산한 결과를 하나의 변수에 저장하기 위한 연산자
+</pre>
+<h4>(3) 복합 대입 연산자</h4>
+<pre>
+- 산술 연산자로 피연산자를 계산해 결과값을 한번에 대입시켜주는 연산자
+- +=, -=
+</pre>
+<h4>(4) 증감 연산자</h4>
+<pre>
+- 숫자 1만큼 증가 / 감소
+- ++, --
+</pre>
+<h4>(5) 비교 연산자</h4>
+<pre>
+- 좌항과 우항의 피연산자를 비교한 다음 결과값을 논리적 자료형으로 반환하는 연산자
+- == : 단순 값의 같음을 비교하는 동등 비교
+- === : 자료형까지 같음을 판단하는 일치 비교 연산자
+- '5' == 5 > true / '5' === 5 > false
+</pre>
+<h4>(6) 논리 연산자</h4>
+<pre>
+- 좌항과 우항의 피연산자 간의 논리 값을 연산하여 참 또는 거짓을 결과로 얻는 연산자
+- && and : 둘 다 true
+- || or : 하나라도 true
+- ! not
+</pre>
+<table>
+    <thead>
+        <tr>
+            <th>x</th>
+            <th>y</th>
+            <th>x || y</th>
+            <th>x && y</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>true</td>
+            <td>true</td>
+            <td>true</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>true</td>
+            <td>false</td>
+            <td>true</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>false</td>
+            <td>false</td>
+            <td>false</td>
+            <td>false</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>SCOPE</h3>
+<pre>
+- 변수/상수에 접근할 수 있는 범위
+- 모듈/함수 내 코드에서 동일한 변수 사용시 간섭을 줄이는 용도로 사용
+- Scope는 Global Scope와 Local Scope로 구분
+  - Global Scope : 전역으로 선언, 어디에서도 접근 가능
+  - Local Scope(block, function level scope) : 특정 지역에 선언, 해당 지역 내에서만 접근 가능
+</pre>
+
+<h3>조건문 --> main2.js</h3>
+<h4>if else</h4>
+<pre>
+- 알고리즘에서 논리적 비교를 할 때 사용
+- 실행 문장이 단일 문장일 경우 {} 생략 가능
+- 삼항 연산자와 변수
+
+age = 6;
+<strong>let level = age >= 8 ? '초등학생' : '유치원생';</strong>
+console.log(level); // 유치원생
+</pre>
+<h4>Switch</h4>
+<pre>
+- Switch는 표현식을 평가, 그 값이 일치하는 case 문을 실행
+- Switch, case, break, default로 구성
+- 일반적으로 하나의 case만 수행되도록 case의 끝을 break로 끝맺음
+- 여러개의 case가 수행될 것이라면 break 없이 코드를 작성한다.
+</pre>
+
+<h3>반복문</h3>
+<h4>for문</h4>
+<pre>
+- 선언문 Init Expression, 조건문 Test Expression, 증감문 Update Expression 으로 구성
+- 조건문이 fail가 될 때까지 반복적으로 수행
+- 선언문, 조건문, 증감문 자리에 공백 입력 가능
+</pre>
+
+<h4>for in문</h4>
+<pre>
+- 객체의 key, value를 반복하며 수행하는데 최적화
+- 첫번째부터 마지막까지 객체의 키 개수만큼 반복
+</pre>
+
+<h4>for of문</h4>
+<pre>
+- Collection 객체 자체가 Symbol.iterator 속성(property)을 가지고 있어야 동작 가능한 유형
+- ES6에 새로 추가된 Collection 기반의 반복 구문
+<code>
+    let lang = 'kimminjoo';
+    let langtext = '';
+
+    for (const x of lang) {
+        langtext += x;
+        // console.log(x); 
+        console.log('for 안에서' + langtext);
+    }
+    console.log('for 밖에서' + langtext);
+    /*
+        for 안에서k
+        for 안에서ki
+        for 안에서kim
+        for 안에서kimm
+        for 안에서kimmi
+        for 안에서kimmin
+        for 안에서kimminj
+        for 안에서kimminjo
+        for 안에서kimminjoo
+        for 밖에서kimminjoo
+    */
+</code>
+</pre>
+
+<h4>while문</h4>
+<pre>
+- 조건문이 참일 때 코드를 반복 수행
+- for문에 비해 선언문과 증감문 없이 loop 수행, 무한 loop 등을 수행할 때 많이 사용
+- 조건문을 코드 블록보다 아래로 옮긴 do while문도 존재(최소 한번 수행이 필요할 때 많이 사용)
+</pre>
+
+<h4>반복문 제어</h4>
+<h5>1. break</h5>
+<pre>
+- 반복문 수행시 코드를 탈출할 때 사용되는 식별자
+- 다중 반복문일 경우 가장 안쪽의 반복문을 종료
+- Label을 통하여 다중 반복문을 한번에 종료 가능
+  >> Lable : 반복문 앞에 콜론과 함께 쓰이는 식별자
+</pre>
+<h5>2. label</h5>
+<pre>
+- 프로그램 내 특정 영역을 지정하여 별도 이름을 붙이는 식별자
+- break와 continue를 사용하는 반복문 안에서만 사용 가능, break나 continue 위에 있어야함
+- 보통 많이 사용하지 않음
+</pre>
+<h5>3. continue</h5>
+<pre>
+- 반복문 수행시 코드 블록 수행을 해당 라인에서 중지하고, 
+  블록 코드를 종료시킨 후 반복문 내 명시된 조건 판단
+- 특정 부분을 종료시킨 후에 다시 조건문으로 가고싶을 때 사용
+- 끝나는게 아님!
+</pre>
+
+<h3>함수</h3>
+<pre>
+- 다수의 명령문을 블록으로 감싸고, 하나의 실행 단위로 만든 코드의 집합
+- 유사한 도작을 하는 코드를 하나로 묶어, 범용성을 확대시킨 블록 코드
+- 정의 부분과 호출 부분으로 구성
+- 가급적 한가지 일만 하며, 매개 변수는 최대 3개 이내로 작성을 권장
+- 매개변수, return 이 두개는 필수 X 
+</pre>
+<h4>함수 정의</h4>
+<h5>1. 함수 선언식 Function Declarations</h5>
+<pre>
+    function add(x, y){
+        return x + y;
+    }
+</pre>
+<h5>2. 함수 표현식 Function Expressions</h5>
+<pre>
+    const add = function(x, y){
+        return x + y;
+    }
+</pre>
+<h5>3. 화살표 함수 Arrow Function</h5>
+<pre>
+    const add = (x, y) => x + y;
+</pre>
+
+<h4>함수 호출</h4>
+<pre>
+- js의 함수는 매개변수와 인수의 개수가 일치하는지 확인하지 않음
+- ES6에서 도입된 기본 값을 통해 undefined 변수가 들어올 경우 값 초기화 지정 가능
+- default value
+<code>
+    let x = 0;
+    function add(x, <strong>y = 10</strong>){
+        // x = 0;
+        // y = 10;
+        return x + y;
+    }
+</code>
+y 값이 있을 경우엔 y = 10;은 무시됨
+
+- dynamic parameters
+arguments[x] : 매개변수 값 가져옴
+<code>
+    function add(){
+        console.log(arguments[0] - arguments[1]);
+    }
+    add(10, 10); >> 0
+    add(20, 10); >> 10
+    add(10, 20); >> -10
+    add(10); >> NaN
+    add(); >> NaN
+</code>
+</pre>
+
+<h4>함수 반환</h4>
+<pre>
+- return 후 코드는 수행되지 않으며, default return value는 undefined
+</pre>
+
+<h4>재귀 함수</h4>
+<pre>
+- 함수 스스로 자신을 참조해 호출하면서 동일한 코드가 계속적으로 수행되는 함수 호출 방법
+- 재귀 함수는 특정 조건이 됐을 때 자신을 그만 호출되도록 제한하는 <strong>exit code(탈출 코드)</strong>가 필요
+</pre>
+
+<h4>콜백 함수</h4>
+<pre>
+- 콜백 함수(callback function)란 다른 함수의 매개변수로 전달되어 수행되어지는 함수
+- 고차 함수(higher-orer function)란 매개변수를 통해 함수를 받아 호출하는 함수 - 콜백함수를 받아 실행하는 함수
+</pre>
+
+<h4>call by *</h4>
+<h5>call by value</h5>
+<pre>
+- 값에 의한 복사로 함수 내에서 매개 변수 값을 변경 시켜도 영향이 미치지 않음
+- 원시타입 primitive type을 매개 변수로 넘겼을 때 발생
+</pre>
+<h5>call by reference</h5>
+<pre>
+- 주소에 대한 복사로 함수 내에서 매개 변수 내 값을 변경시키면 원본 데이터에도 영향을 받음
+- 객체 타입 object type 을 매개 변수로 넘겼을 때 발생
+<strong>- 객체는 주소값으로 변경해오기 때문에 복사한 값, 복사해온 값 모두 변경 된다.</strong>
+- 객체 타입일 경우 유의해야한다.
+</pre>
+
+<h4>method</h4>
+<h5>함수 다시 한번</h5>
+<pre>
+- 함수 선언식, 함수 표현식, 화살표 함수
+- 함수 선언식( function name(){} )으로 된 함수도 변수에 넣어준다면, 그 변수는 함수처럼 사용 가능하다.
+- 함수 선언식과 함수 표현식은 같은지 비교했을 때, false가 나왔다. >> 같은 역할을 하더라도 둘의 함수를 넣은 메모리 영역이 다르기 때문!
+- 함수 선언식과 함수 선언식을 할당한 변수가 같은지 비교했을 때, true가 나왔다. >> 주소 값이 같기 때문
+  --> 화살표 함수는 함수의 정보를 확인할 때 다른 함수들보다 정보가 적다.
+  --> 함수를 할당한 변수는 value 값이 그 함수를 가리키고 있다.
+- Object.getOwnPropertyDescriptors(함수명); >> 함수의 정보를 알 수 있다.
+- 객체 안의 함수
+let list = [ 'mj', 27, function hello_func(){ console.log('hi im mj'); } ]
+실행 >> list[2]();
+</pre>
+<h5>method? - 객체 내의 함수</h5>
+<pre>
+- <strong>객체에 저장된 값이 함수</strong>인 경우, 이를 메서드라고 부름
+- 메모리영역이 모든 값을 갖고 있는게 아니라, 주소값을 갖고 있는 것
+- 결국 객체 내의 함수도 갖고 있는 것은 주소값 > <strong>주소값의 메모리에 접근하여 함수를 호출</strong>하는 것
+</pre>
+
+<h4>this</h4>
+<pre>
+- 메서드에서 객체 내부의 속성값을 접근할 수 있는 지시자
+- this --> 부른 곳에서 같은 메모리 영역 안에 있는 것이 this!
+- main2.js 참고!
+</pre>
+
+<h3>자료형 Number</h3>
+<pre>
+- js에서 일반적인 숫자 - 64비트 형식의 IEEE-754 표준 기반 형태로 저장되는 자료형
+- 10진수 외에 16, 2, 8진수 등 사용
+  > 16진수 Hexadecimal : 0xFF
+  > 8진수 Octal : 0o71
+  > 2진수 Binary : 0b1101
+</pre>
+<h4>대표 상수 값</h4>
+<pre>
+- [ MAX | MIN ]_VALUE
+- [ MAX | MIN ]_SAFE_INTEGER
+- [ POSITIVE | NEGATIVE ]_INFINITY, NaN
+</pre>
+<h4>Number 상수 값</h4>
+<h5>Number.MAX_VALUE / Number.MIN_VALUE</h5>
+<pre>
+- 지수로 표기되는 양수 최대 / 최소 값
+</pre>
+<h5>Number_MAX_SAFE_INTEGER / Number.MIN_SAFE_INTEGER</h5>
+<pre>
+- 안전하게 표기되는 최대(양수) / 최수(음수)값
+</pre>
+<h5>Number.POSITIVE_INFINITY / Number.NEGATIVE_INFINITY</h5>
+<pre>
+- 무한대 양수/음수 값
+</pre>
+<h5>Number.NaN</h5>
+<pre>
+- 부동 소수점 산술에서 정의되지 않거나 표현할 수 없는 값으로 해서될 수 있는 숫자 데이터 유형
+</pre>
+
+<h4>대표 메서드</h4>
+<h5>Number.toSting()</h5>
+<pre>
+- 형 변환
+- 문자열로 변환
+- 같은 역할을 하는 메서드
+  >> String(), Number + ''(문자열을 더해서 강제로 문자열로 만드는 것)
+</pre>
+<h5>Number.toFixed() / Number.toPrecision()</h5>
+<pre>
+- Number.toFixed() >> 소수의 자리 수 길이를 제한,
+  괄호 안에 3으로 한다면 n.nnn까지 나온다.
+- Number.toPrecision() >> 정수와 소수의 자리 수를 합한 길이로 제한,
+  괄호 안에 3으로 한다면 정수자릿수를 포함해서 총 3개의 숫자가 나온다.
+- 특정 자리수까지 제한하여 숫자 표현
+</pre>
+<h5>Number.isNaN() / Number.isFinite()</h5>
+<pre>
+- 타입(자료형) <strong>확인</strong>
+- Number.isNan() >> 부동 소수점 산술에서 정의되지 않거나, 표현할 수 없는 값인지 확인
+- Number.isFinite() >> 정상적인 유한수인지 확인
+</pre>
+<h5>Number.parseInt() / Number.parseFloat()</h5>
+<pre>
+- Number.parsInter() >> 정수로 변환하는 방법(N진수로 명시적 변환도 가능)
+- Number.parseFloat() >> 실수로 변환하는 방법
+</pre>
+
+<h4>지수 / 진법</h4>
+<h5>지수 표기법</h5>
+<pre>
+- 아주 큰 숫자나 아주 작은 숫자를 표기하기 위해 지수 표기법(e)으로 0의 개수를 대체 표기 가능
+- 1000000000 == 1e9(1 + 0 9개) > 10억
+- 1e-6 > micro sec, 왼쪽으로 6번 소수점 이동 > 0.000001
+</pre>
+<h5>진법 표기</h5>
+<pre>
+- 진법 표기를 지원하기 위해 0x(16진수) / 0o(8진수) / 0b(2진수)로 N 진수 표기 가능
+- 15를 진법 표기로 한다면?
+    >> 16진수 : 0x0f
+    >> 8진수 : 0o17
+    >> 2진수 : 0b1111
+</pre>
+
+<h3>String</h3>
+<pre>
+- 텍스트 길이에 상관없이 문자열 형태로 저장되는 자료형
+- js에서는 글자 하나만 저장할 수 있는 char 자료형이 없음
+- js에서 문자열은 페이지 인코딩 방식과 상관없이 항상 UTF-16 형식을 따름
+</pre>
+<h4>대표 속성과 메서드</h4>
+<h5>String.length</h5>
+<pre>- 문자열 길이</pre>
+<h5>String.charAth(index) / String.chaCodeAt(index)</h5>
+<pre>- 문자열 접근( chaCodeAt > 아스키코드 가져옴 )</pre>
+<h5>String.indexOf(substr, pos) / String.lastIndexOf(substr, pos) / String.includes(substr, pos) / String.startsWidth(substr, pos) / String.endsWith(substr, pos)</h5>
+<pre>
+- 문자열 검색
+- substr : 찾을 문자열 / pos : 어디서부터 찾을지
+- index로 받기 : indexOf, lastIndexOf
+- bool로 받기 : includes, startsWidth(string) >> 해당 문자열로 시작하는지!, endsWith(string) >> 해당 문자열로 끝나는지!
+</pre>
+<h5>String.toUpperCase() / String.toLowerCase()</h5>
+<pre>- 문자열 변환(대소문자 변환)</pre>
+<h5>String.replace()</h5>
+<pre>- 문자열 치환</pre>
+<h5>String.slice() / String.substring() / String.substr()</h5>
+<pre>- 문자열 추출</pre>
+<h5>String.split()</h5>
+<pre>- 문자열 분할</pre>
+
+<h4>문자 정의/표기</h4>
+<pre>
+* 정의 방법
+- string 정의 방법 : "", '', Sting()
+- 문자열과 변수 혼합 표현 방법 : ``
+
+* 문자 표기
+- 다양한 문자 표기 방법
+  >> Line feed(\n) >> 개행
+  >> Carriage return(\r) >> 개행
+  >> Backslash(\\)
+  >> Tab(\t)
+  >> Unicode(\u{})
+</pre>
+
+<h3>문자열 변환</h3>
+<h4>문자열 치환</h4>
+<pre>
+- 처음 만나는 요소 문자열 치환(치환된 문자열 반환) : String.replace(origin_str, change_str)
+- 정규 표현식 활용 문자열 치환 : 치환 문자열에 정규 표현식 기입 > /치환문자열/g(전체)i(대소문자 구분X)
+- replace : 원본 문자는 변환 X, 변환된 문자를 return 해주는 역할 > 활용하고 싶다면 변수에 저장하기
+</pre>
+<h4>문자열 추출</h4>
+<pre>
+- 위치 기반 : String.slice(start, end) / String.substring(start, end)  >> end는 끝내고 싶은 문자열의 바로 다음 숫자까지 적는다.
+- 길이 기반 : String.substr(start, length)
+- 원본 문자는 변환 X, 변환된 문자를 return 해줌 > 활용하고 싶다면 변수에 저장하기
+- slice : end 없이 start만 쓰고, 그 숫자를 -로 준다면 뒤에서부터 시작된다.
+- slice는 start가 end보다 큰 숫자면 인식 못하지만, substring은 start가 end보다 크면 자동으로 작은 숫자를 start로 본다.
+</pre>
+<h4>문자열 분할</h4>
+<pre>
+- 배열로 문자열 분할 : String.split(Separator, limit)
+</pre>
+
+<h3>Array</h3>
+<h4>배열</h4>
+<pre>
+- 여러 개체 Entity 값을 순차적으로 나열한 자료 구조(알고리즘 내 사용 빈도 많음)
+- 배열 내 갑을 요소 element 라고 하며, 배열 요소는 index로 접근
+</pre>
+<h5>배열의 대표 속성과 메서드</h5>
+<pre>
+- 배열 크기 및 배열 여부 확인 : Array.length / Array.isArray()
+- 배열 추가/삭제 : Array.push() - 끝부분에 추가 / Array.pop() - 끝부분거를 삭제 / 
+                  Array.unshift() - 앞부분에 추가 / Array.shift() - 앞에거를 삭제 /
+                  Array.splice() / Array.slice() 등
+- 배열 탐색 : Array.indexOf() / Array.lastIndexOf() / Array.includes()
+- 배열 변형(callback 미사용) : Array.sort() / Array.reverse() / Array.join()
+</pre>
+<h5>배열 선언/접근/속성</h5>
+<pre>
+- 선언 : new Array 혹은 [] 를 통해 선언, 사이즈 혹은 값을 입력하여 초기화 가능
+- 접근 : Array[index]를 통해 index를 통해 O(1) 접근
+- 속성 : Array.length를 통해 배열 요소의 개수 확인 가능
+</pre>
+<h5>배열의 실체</h5>
+<pre>
+- js에서 배열은 Hash 기반의 객체
+- 메모리가 연속적인 밀집 배열 dense array 가 아닌 비연속적인 희소 배열 sparse array
+</pre>
+<h5>배열 타입 확인</h5>
+<pre>
+- Array.isArray(value);
+</pre>
+<h5>배열 요소 삭제</h5>
+<pre>
+- 배열 일부 요소 삭제 : delete array[index]; >> 삭제해도 배열 사이즈가 그대로인 문제점!
+  그래서 대부분 delete를 사용하지 않는다.
+</pre>
+<h5>배열 조작</h5>
+<pre>
+* LIFO(Last In First Out)
+1. LIFO -- Back
+- 추가 : Array.push() / 삭제 : Array.pop()
+
+2. LIFO -- Front
+- 추가 : Array.unshift() / 삭제 : Array.shift()
+
+3. 배열 삭제/변경(index)
+- Array.splice(삭제할 요소의 인덱스, 몇개 삭제할건지, [ 삭제한 요소의 자리에 넣을 요소, 삭제한 요소의 자리에 넣을 요소... ]);
+
+4. 배열 요소 삭제
+- Array.slice( start, end ); >> 원본 배열 보존, 가져온 데이터 return
+
+5. 배열 병합
+- Array.concat( arr, arr... ); >> 원본 배열 보존, 병합한 데이터 return
+</pre>
+
+<h5>배열 반복문</h5>
+<pre>
+- for length > index로 접근
+- for of > element로 접근
+- for in > key로 접근
+</pre>
+
+<h5>배열 탐색/변형</h5>
+<pre>
+1. 인덱스 탐색 >> 인덱스값 리턴
+- 앞에서부터 : Array.indexOf(item, from);
+- 뒤에서부터 : Array.lastIndexOf(item, from);
+
+2. 값 포함 여부 확인
+- Array.includes(item, from); >> 논리값 리턴
+</pre>
+
+<h5>배열 변형</h5>
+<pre>
+1. 배열 정렬 >> 오름차순
+- Array.sort() >> 원본에 영향
+- 정렬, 반전은 문자열도 가능 >> 맨 앞글자의 아스키코드, 유니코드값을 판단해서 정렬시킨다.
+
+2. 배열 반전
+- Array.reverse() >> 원본에 영향
+
+3. 배열을 문자열로 변환
+- Array.join( separator ) >> separator은 옵션, 기본은 콤마이다.
+- 원본 영향 없음
+</pre>
+
+
+
+
+
+
+
+<br><hr>
+
+</body>
+</html>
