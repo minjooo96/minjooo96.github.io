@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학 기본 이론</title>
+    <style>
+        *{line-height:1.6em;font-size:14px;font-family:sans-serif;}
+        hr{border-color:blue;border-width:2px;background-color:blue;}
+        h2{color:blue;font-size:25px;font-weight:bold;}
+        h2::before{content:'[';display:inline-block;margin-right:10px;}
+        h2::after{content:']';display:inline-block;margin-left:10px;}
+        h3{border-bottom:1px solid cornflowerblue;color:cornflowerblue;font-size:22px;font-weight:bold;}
+        h4{margin:0;color:cadetblue;font-size:18px;}
+        h5{margin:10px 0;color:mediumslateblue;font-size:16px;}
+        table{border:1px solid #000;}
+        table th{background-color:gray;color:#fff;}
+        table tr *{padding:5px;border:1px solid #000;text-align:center;}
+    </style>
+</head>
+<body>
+<h2>수학 기본 이론</h2>
+<h3>알고리즘 복잡도</h3>
+<h4>알고리즘 평가 지표</h4>
+<pre>
+1. 정확성
+2. 작업량
+3. 메모리 사용량
+4. 최적성
+5. 효율성 - <strong>시간 복잡도</strong> / 공간 복잡도
+</pre>
+<h5>시간 복잡도</h5>
+<pre>
+- 입력 크기의 값에 대해 단위 연산을 몇 번 수행하는지 계산하여, 알고리즘의 수행시간을 평가하는 방법
+- 3가지 점근적 표현법
+  1. 빅오 : 27n + 5  <strong>최악의 상황</strong>을 고려하여 성능 측정 결과 표현 --> 대부분 빅오 사용
+  2. 세타 : 2n^2 + 5   <strong>평균</strong>적인 경우에서의 성능 측정 결과 표현
+  3. 오메가 : n^3 + 5   <strong>최선의 상황</strong>일 때의 성능 측정 결과 표현
+</pre>
+<h5>빅오 표기법</h5>
+<pre>
+- 단일 for문의 개수에 따라 > n^2
+- n+2(뒤쪽의 상수인 2를 날리고 n만 남겨둔다.) > O(N)
+
+- 중첩 for문 > n * n = n^2
+- n^2 + 2 -> O(N^2)
+
+- logN > 그냥 n보다 빠름
+- n/2+2 --> O(log N)
+
+- n이 커지면 커질수록 오래 걸리는 코드
+
+- https://www.bigocheatsheet.com
+</pre>
+
+<h3>경우의 수</h3>
+<pre>
+- 어떤 사건 혹은 일이 일어날 수 있는 경우의 가짓수를 수로 표현
+- 일상 생활에서의 경우의 수
+  * 주사위 - 6(1~6)
+  * 윷 - 5(도 개 걸 윷 모)
+  * 가위바위보 - 3(가위 바위 보)
+  * 동전 - 2(앞면 뒷면)
+- 완전 탐색으로 경우의 수를 푸는 알고리즘
+  * 순열 : 서로 다른 n개의 원소 중에서 r개를 <strong>중복 없이 골라 순서에 상관 있게</strong> 나열하는 경우의 수(nPr)
+  * 조합 : 서로 다른 n개의 원소 중에서 r개를 <strong>중복 없이 골라 순서에 상관 없게</strong> 나열하는 경우의 수(nCr)
+  * 중복 순열 : 서로 다른 n개의 원소 중에서 r개를 <strong>중복 있게 골라 순서에 상관 있게</strong> 나열하는 경우의 수(nH)
+</pre>
+<h4>순열</h4>
+<pre>
+- 서로 다른 n개의 원소 중에서 r개를 <strong>중복 없이 골라 순서에 상관 있게</strong> 나열하는 경우의 수
+</pre>
+<h4>조합 Combination</h4>
+<pre>
+- 서로 다른 n개의 원소 중에서 r개를 <strong>중복 없이 골라 순서에 상관 없게</strong> 나열하는 경우의 수
+</pre>
+
+<h3>점화식(=재귀식)</h3>
+<pre>
+- 수열에서 이웃하는 두개의 항 사이에 성립하는 관계를 나타낸 관계식
+- 대표적인 점화식(a는 고정된 상수)
+  * 등차 수열 : F(n) = F(n-1) + a
+  * 등비 수열 : F(n) = F(n-1) * a
+  * 팩토리얼  : F(n) = F(n-1) * n
+  * 피보나치 수열 : F(n) = F(n-1) + F(n-2)
+</pre>
+
+
+<br><hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
